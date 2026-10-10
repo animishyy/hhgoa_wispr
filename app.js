@@ -12,11 +12,13 @@
   // Scatter a consistent field of stars so the little cosmos feels intentional on every load.
   let seed = 413;
   const random = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
-  els.starfield.innerHTML = Array.from({length: 54}, () => {
-    const x = (random() * 96 + 2).toFixed(2), y = (random() * 91 + 3).toFixed(2);
-    const opacity = (.18 + random() * .55).toFixed(2), duration = (1.3 + random() * 3.8).toFixed(2);
-    return `<i class="star" style="left:${x}%;top:${y}%;--opacity:${opacity};--duration:${duration}s"></i>`;
-  }).join('');
+  if (els.starfield) {
+    els.starfield.innerHTML = Array.from({length: 54}, () => {
+      const x = (random() * 96 + 2).toFixed(2), y = (random() * 91 + 3).toFixed(2);
+      const opacity = (.18 + random() * .55).toFixed(2), duration = (1.3 + random() * 3.8).toFixed(2);
+      return `<i class="star" style="left:${x}%;top:${y}%;--opacity:${opacity};--duration:${duration}s"></i>`;
+    }).join('');
+  }
 
   function visibleScenarios() {
     return scenarios.map((item, index) => ({item,index})).filter(({item}) =>
