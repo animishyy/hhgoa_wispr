@@ -6,6 +6,10 @@
 >
 > The supplied `.env` did not contain a Vercel URL. This conventional project-name URL returned Vercel’s `DEPLOYMENT_NOT_FOUND` response when checked, so it is not a confirmed live deployment. Replace it with the canonical production URL after the repository is connected and deployed.
 
+> **GitHub Pages:** [animishyy.github.io/hhgoa_wispr](https://animishyy.github.io/hhgoa_wispr/)
+>
+> The URL becomes live after GitHub Pages is enabled for the `main` branch. This repository is configured for a plain static site and does not need a build workflow.
+
 ## Try it
 
 Choose a scenario from the left-hand library, or filter the list by topic or search by keyword. The animated planet changes with each experiment; its label, measurement, explanation and field note update at the same time. Use the arrow buttons or keyboard arrow keys to move through the experiments, **Surprise me** to jump to one at random, and **Replay the shift** to replay the visual change. **Compare with Earth** opens a side-by-side reference with today’s Earth. The motion button pauses decorative animation for a calmer view.
@@ -56,6 +60,19 @@ The project is plain static HTML, CSS and JavaScript, so it can be deployed with
 4. Deploy. Future pushes to the connected production branch will trigger a new deployment.
 
 No values from `.env` are needed by the browser. Keep the GitHub token private; never add it to application code or commit `.env`.
+
+## Deploy to GitHub Pages
+
+The app is plain static HTML, CSS and JavaScript, so GitHub Pages can serve the repository root directly. The included [`.nojekyll`](./.nojekyll) file tells Pages to serve static files without a Jekyll build. Once enabled, pushes to `main` automatically update the site.
+
+To enable it in GitHub:
+
+1. Open **Settings → Pages** in the repository.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Choose branch **`main`** and folder **`/ (root)`**, then click **Save**.
+4. Wait for the initial Pages build and visit [https://animishyy.github.io/hhgoa_wispr/](https://animishyy.github.io/hhgoa_wispr/).
+
+GitHub can take a few minutes to publish the first build. Later pushes to `main` publish automatically.
 
 ## Project notes
 
