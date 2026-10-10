@@ -2,9 +2,9 @@
 
 **What if Earth were different?** Earth, Elsewhere is a playful, browser-based planet laboratory. Pick one of 100 planetary “what if?” prompts, watch the globe transform, and read a short explanation of the Earth systems that might be affected.
 
-> **Deployment:** [Open Earth, Elsewhere on Vercel](https://hhgoa-wispr.vercel.app/)
+> **Expected Vercel URL (unconfirmed):** [hhgoa-wispr.vercel.app](https://hhgoa-wispr.vercel.app/)
 >
-> The repository’s supplied `.env` did not contain a Vercel URL, so this is the conventional Vercel project URL based on the repository name. If your Vercel project uses a different custom domain, replace this link with the canonical production URL.
+> The supplied `.env` did not contain a Vercel URL. This conventional project-name URL returned Vercel’s `DEPLOYMENT_NOT_FOUND` response when checked, so it is not a confirmed live deployment. Replace it with the canonical production URL after the repository is connected and deployed.
 
 ## Try it
 
@@ -48,11 +48,11 @@ There is no numerical climate or orbital solver behind the readouts. The numbers
 
 ## Deploy to Vercel
 
-The project is plain static HTML, CSS and JavaScript, so it can be deployed without a framework build step:
+The project is plain static HTML, CSS and JavaScript, so it can be deployed without a framework build step. `vercel.json` selects the **Other** framework preset, skips the build command, and serves the repository root as static output:
 
 1. Import `animishyy/hhgoa_wispr` into Vercel, or connect the repository to the existing Vercel project.
 2. Choose **Other** as the framework preset (or leave the project as a static site).
-3. Leave the build command empty. Set the output directory to `.` if Vercel asks for one.
+3. Leave the build command empty. The checked-in `vercel.json` sets the output directory to `.`.
 4. Deploy. Future pushes to the connected production branch will trigger a new deployment.
 
 No values from `.env` are needed by the browser. Keep the GitHub token private; never add it to application code or commit `.env`.
