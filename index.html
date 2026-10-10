@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090f19">
+  <meta name="description" content="A playful planet simulator. Run 100 what-if experiments and discover how Earth responds.">
+  <title>Earth, Elsewhere — Planet Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Earth, Elsewhere home"><span class="brand-mark">✳</span><span>EARTH<span class="brand-light">, ELSEWHERE</span></span></a>
+      <div class="top-note"><span class="live-dot"></span> A tiny laboratory for big questions</div>
+      <button class="sound-toggle" id="motionToggle" aria-pressed="true"><span class="motion-icon">◉</span> <span>Motion on</span></button>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <div class="eyebrow"><span>PLANET LAB</span><span class="eyebrow-line"></span><span>FIELD NOTES 001—100</span></div>
+        <h1>What if Earth<br>were <em>different?</em></h1>
+        <p class="intro-copy">Nudge one planetary knob. Watch a whole world change.<br class="desktop-only"> Big cosmic questions, small interactive experiments.</p>
+      </section>
+
+      <section class="lab-layout" aria-label="Planet experiment simulator">
+        <aside class="scenario-rail">
+          <div class="rail-heading"><div><span class="section-kicker">THE EXPERIMENTS</span><h2>Pick a what-if</h2></div><span class="count-pill" id="scenarioCount">100</span></div>
+          <label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="Find a scenario…" aria-label="Search scenarios"><kbd>⌘ K</kbd></label>
+          <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="Scenario category"></div>
+          <div class="scenario-list" id="scenarioList" role="listbox" aria-label="Scenarios"></div>
+          <div class="rail-foot"><span class="tiny-star">✳</span><span>Every experiment is a thought experiment.<br>Earth keeps its original ticket home.</span></div>
+        </aside>
+
+        <section class="experiment" aria-live="polite">
+          <div class="experiment-top"><div class="experiment-label"><span class="live-dot"></span><span id="experimentNumber">EXPERIMENT 01 / 100</span></div><button class="icon-button" id="shuffleButton" aria-label="Surprise me" title="Surprise me">↝</button></div>
+          <div class="planet-stage" id="planetStage" data-mode="water">
+            <div class="stage-grid"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="starfield" id="starfield"></div>
+            <div class="sun-glow"></div><div class="sun-dot"></div>
+            <div class="planet-wrap" id="planetWrap"><div class="planet-shadow"></div><div class="planet" id="planet"><div class="planet-texture"></div><div class="land land-one"></div><div class="land land-two"></div><div class="land land-three"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="planet-overlay"></div><div class="planet-ring"></div><div class="planet-cracks"></div></div><div class="moonlet"></div></div>
+            <div class="stage-tag tag-left"><span class="tag-dot"></span><span id="stageTag">AQUA WORLD</span></div>
+            <div class="stage-tag tag-right"><span>AGE</span><strong id="stageAge">4.54 BY</strong></div>
+            <div class="stage-caption"><span>FIG. <b id="figureNumber">01</b></span><span class="caption-rule"></span><span>NOT TO SCALE</span></div>
+            <div class="stage-control"><button id="replayButton" aria-label="Replay animation">↻</button><span>REPLAY THE SHIFT</span></div>
+          </div>
+
+          <div class="scenario-detail"><div class="detail-copy"><div class="detail-meta"><span class="category-label" id="detailCategory">WATER & CLIMATE</span><span class="detail-separator">/</span><span class="scenario-id" id="detailId">EE-001</span></div><h2 id="detailTitle">A world without water</h2><p id="detailDescription"></p></div><div class="detail-stat"><span id="statLabel">SURFACE WATER</span><strong id="statValue">0<span>%</span></strong></div></div>
+          <div class="insight-strip"><span class="insight-icon">i</span><p id="insightText"></p><span class="insight-source">A MODEL, NOT A FORECAST</span></div>
+          <div class="experiment-actions"><button class="compare-button" id="compareButton"><span>＋</span> Compare with Earth</button><div class="experiment-pagination"><button id="prevButton" aria-label="Previous scenario">←</button><span id="pageLabel">01 <i>/</i> 100</span><button id="nextButton" aria-label="Next scenario">→</button></div></div>
+          <div class="compare-drawer" id="compareDrawer" hidden><div class="compare-planet"><span class="mini-earth">●</span><div><span>OUR EARTH</span><strong>1 g · 71% ocean</strong></div></div><span class="compare-arrow">↔</span><div class="compare-planet"><span class="mini-alternate" id="miniAlternate">●</span><div><span id="compareScenarioName">THIS EARTH</span><strong id="compareValue">0% water</strong></div></div><button id="closeCompare" aria-label="Close comparison">×</button></div>
+        </section>
+      </section>
+
+      <section class="closing-note"><span class="closing-spark">✳</span><div><span class="section-kicker">A NOTE FROM THE LAB</span><p>Earth is a system of delightful, delicate connections. These sketches are invitations to ask better questions—not predictions of a changed planet.</p></div><span class="closing-coordinates">40° 43′ N<br>THE BLUE DOT</span></section>
+    </main>
+    <footer><span>EARTH, ELSEWHERE <span class="footer-muted">· AN INTERACTIVE THOUGHT EXPERIMENT</span></span><span>MADE FOR THE CURIOUS <span class="footer-asterisk">✳</span></span></footer>
+  </div>
+  <script src="scenarios.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
