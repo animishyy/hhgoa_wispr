@@ -1,7 +1,7 @@
 (() => {
   const scenarios = window.PLANET_SCENARIOS || [];
   const categories = ['All experiments', ...new Set(scenarios.map(s => s.category))];
-  const els = Object.fromEntries(['scenarioList','categoryTabs','searchInput','scenarioCount','experimentNumber','detailCategory','detailId','detailTitle','detailDescription','statLabel','statValue','insightText','stageTag','stageAge','figureNumber','pageLabel','planetStage','compareDrawer','compareScenarioName','compareValue','miniAlternate'].map(id => [id, document.getElementById(id)]));
+  const els = Object.fromEntries(['scenarioList','categoryTabs','searchInput','scenarioCount','experimentNumber','detailCategory','detailId','detailTitle','detailDescription','statLabel','statValue','insightText','stageTag','stageAge','figureNumber','pageLabel','planetStage','starfield','compareDrawer','compareScenarioName','compareValue','miniAlternate'].map(id => [id, document.getElementById(id)]));
   let selected = 0;
   let category = 'All experiments';
   let query = '';
